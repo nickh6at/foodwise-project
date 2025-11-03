@@ -135,8 +135,7 @@ const Restaurant = () => {
       toast.error("Your cart is empty");
       return;
     }
-    // Navigate to checkout (to be implemented)
-    toast.info("Checkout feature coming soon!");
+    navigate("/checkout", { state: { cart, restaurant } });
   };
 
   const groupedItems: Record<string, any[]> = menuItems.reduce((acc, item) => {

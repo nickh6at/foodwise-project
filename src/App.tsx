@@ -8,6 +8,7 @@ import Auth from "./pages/Auth";
 import Restaurant from "./pages/Restaurant";
 import HealthDashboard from "./pages/HealthDashboard";
 import RestaurantDashboard from "./pages/RestaurantDashboard";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/restaurant/:id" element={<Restaurant />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/my-nutrition" element={<HealthDashboard />} />
           <Route path="/restaurant-dashboard" element={<RestaurantDashboard />} />
           <Route path="*" element={<NotFound />} />
