@@ -30,14 +30,14 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("cod");
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      if (!session) navigate("/auth");
-    });
-
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null);
-      if (!session) navigate("/auth");
+      if (!session) navigate("/login");
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      if (!session) navigate("/login");
     });
 
     return () => subscription.unsubscribe();

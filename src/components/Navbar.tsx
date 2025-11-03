@@ -22,7 +22,7 @@ const Navbar = ({ user, isRestaurantOwner }: NavbarProps) => {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     toast.success("Signed out successfully");
-    navigate("/auth");
+    navigate("/login");
   };
 
   return (
@@ -76,7 +76,7 @@ const Navbar = ({ user, isRestaurantOwner }: NavbarProps) => {
                 </DropdownMenu>
               </>
             ) : (
-              <Button onClick={() => navigate("/auth")}>Sign In</Button>
+              <Button onClick={() => navigate("/login")}>Sign In</Button>
             )}
           </div>
         </div>

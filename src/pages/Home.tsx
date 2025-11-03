@@ -34,7 +34,7 @@ const Home = () => {
         setUser(session?.user ?? null);
         
         if (!session) {
-          navigate("/auth");
+          navigate("/login");
         }
       }
     );
@@ -45,7 +45,7 @@ const Home = () => {
       setUser(session?.user ?? null);
       
       if (!session) {
-        navigate("/auth");
+        navigate("/login");
       }
     });
 
