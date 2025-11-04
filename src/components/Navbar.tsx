@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Utensils, User, LogOut, LayoutDashboard, Heart } from "lucide-react";
+import { Utensils, User, LogOut, LayoutDashboard, Heart, ShoppingBag } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import {
@@ -40,15 +40,26 @@ const Navbar = ({ user, isRestaurantOwner }: NavbarProps) => {
             {user ? (
               <>
                 {!isRestaurantOwner && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => navigate("/my-nutrition")}
-                    className="gap-2"
-                  >
-                    <Heart className="w-4 h-4" />
-                    <span className="hidden sm:inline">Health Dashboard</span>
-                  </Button>
+                  <>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => navigate("/my-orders")}
+                      className="gap-2"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span className="hidden sm:inline">My Orders</span>
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => navigate("/my-nutrition")}
+                      className="gap-2"
+                    >
+                      <Heart className="w-4 h-4" />
+                      <span className="hidden sm:inline">Health Dashboard</span>
+                    </Button>
+                  </>
                 )}
                 
                 <DropdownMenu>

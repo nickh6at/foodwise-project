@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import Restaurant from "./pages/Restaurant";
 import HealthDashboard from "./pages/HealthDashboard";
+import MyOrders from "./pages/MyOrders";
 import RestaurantDashboard from "./pages/RestaurantDashboard";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/login" element={<Auth />} />
           <Route path="/restaurant/:id" element={<Restaurant />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/my-orders" element={<MyOrders />} />
           <Route path="/my-nutrition" element={<HealthDashboard />} />
           <Route path="/restaurant-dashboard" element={<RestaurantDashboard />} />
           <Route path="*" element={<NotFound />} />
